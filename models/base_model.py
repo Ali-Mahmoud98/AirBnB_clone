@@ -13,9 +13,9 @@ class BaseModel:
     def __init__(self, *args, **kwargs):
         """Initialize a new instance of the BaseModel.
 
-            Args:
-                *args (any): unused
-                **kargs (dict): Key/value pairs of attributes.
+        Args:
+            *args (any): unused
+            **kargs (dict): Key/value pairs of attributes.
         """
         time_format = "%Y-%m-%dT%H:%M:%S.%f"
         self.id = str(uuid.uuid4)
@@ -37,8 +37,7 @@ class BaseModel:
         models.storage.save()
     
     def to_dict(self):
-        """Convert the instance to a dictionary for serialization.
-        """
+        """Convert the instance to a dictionary for serialization."""
         instance_dict = self.__dict__.copy()
         instance_dict["__class__"] = self.__class__.__name__
         instance_dict["created_at"] = self.created_at.isoformat()

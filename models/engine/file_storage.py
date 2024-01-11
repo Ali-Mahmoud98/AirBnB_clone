@@ -37,7 +37,11 @@ class FileStorage:
                 objdict = json.load(f)
                 for o in objdict.values():
                     class_name = o["__class__"]
+                    # Remove the "__class__" key from the dictionary
                     del o["__class__"]
+                    # Using the eval function, it dynamically creates an
+                    # instance of the class specified by class_name, passing
+                    # the remaining dictionary as keyword arguments (**o).
                     self.new(eval(class_name)(**o))
         except FileNotFoundError:
             return
