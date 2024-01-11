@@ -30,21 +30,21 @@ class BaseModel:
                     self.__dict__[k] = v
         else:
             models.storage.new(self)
-    
+
     def save(self):
         """Save the current state of the instance."""
         self.updated_at = datetime.today()
         models.storage.save()
-    
+
     def to_dict(self):
         """Convert the instance to a dictionary for serialization."""
         instance_dict = self.__dict__.copy()
         instance_dict["__class__"] = self.__class__.__name__
         instance_dict["created_at"] = self.created_at.isoformat()
         instance_dict["updated_at"] = self.updated_at.isoformat()
-        
+
         return instance_dict
-    
+
     def __str__(self):
         """Return a string representation of the instance."""
         class_name = self.__class__.__name__
