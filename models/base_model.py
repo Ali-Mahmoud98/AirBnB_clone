@@ -5,6 +5,7 @@ base model instances.
 """
 import uuid
 from datetime import datetime
+import models
 
 
 class BaseModel:
@@ -17,22 +18,23 @@ class BaseModel:
                 **kargs (dict): Key/value pairs of attributes.
         """
         time_format = "%Y-%m-%dT%H:%M:%S.%f"
-        if kwargs:
+        self.id = str(uuid.uuid4)
+        self.created_at = datetime.utcnow()
+        self.updated_at = datetime.utcnow()
+
+        if len(kwargs) != 0:
             for k, v in kwargs.items():
-                if k == "__class__":
-                    continue
-                elif k == "created_at" or k == "updated_at":
-                    setattr(self, k, datetime.strptime(v, time_format))
+                if k == "created_at" or k == "updated_at":
+                    self.__dict__[k] = datetime.strptime(v, time_format)
                 else:
-                    setattr(self, k, v)
+                    self.__dict__[k] = v
         else:
-            self.id = str(uuid.uuid4)
-            self.created_at = datetime.utcnow()
-            self.updated_at = datetime.utcnow()
+            models.storage.new(self)
     
     def save(self):
         """Save the current state of the instance."""
         self.updated_at = datetime.today()
+        models.storage.save()
     
     def to_dict(self):
         """Convert the instance to a dictionary for serialization.
