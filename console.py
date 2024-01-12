@@ -5,7 +5,7 @@ import cmd
 
 class HBNBCommand(cmd.Cmd):
     prompt = "(hbnb) "
-    
+
     def do_quit(self, arg):
         """Quit command to exit the program\n"""
         return True
@@ -14,7 +14,7 @@ class HBNBCommand(cmd.Cmd):
         """Handles EOF (Ctrl+D) to exit the program"""
         print("")
         return True
-    
+
     def emptyline(self):
         """Do nothing on an empty line"""
         pass
