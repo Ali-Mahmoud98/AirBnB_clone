@@ -29,14 +29,17 @@ class Test_BaseModel(unittest.TestCase):
         self.assertIsInstance(model_dict, dict)
         self.assertEqual(model_dict["__class__"], "BaseModel")
         self.assertEqual(model_dict["id"], myModel.id)
-        self.assertEqual(model_dict["created_at"], myModel.created_at.isoformat())
-        self.assertEqual(model_dict["updated_at"], myModel.updated_at.isoformat())
+        self.assertEqual(model_dict["created_at"],
+                         myModel.created_at.isoformat())
+        self.assertEqual(model_dict["updated_at"],
+                         myModel.updated_at.isoformat())
 
     def test_str(self):
         myModel = BaseModel()
         self.assertTrue(str(myModel).startswith("[BaseModel]"))
         self.assertIn(myModel.id, str(myModel))
         self.assertIn(str(myModel.__dict__), str(myModel))
+
 
 if __name__ == "__main__":
     unittest.main()
