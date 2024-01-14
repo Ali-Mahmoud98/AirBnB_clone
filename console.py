@@ -43,6 +43,35 @@ class HBNBCommand(cmd.Cmd):
         "Review"
     }
 
+    def default(self, arg):
+        """Default behavior for cmd module when input is invalid"""
+        argdict = {
+            "all": self.do_all,
+            "show": self.do_show,
+            "destroy": self.do_destroy,
+            "update": self.do_update
+        }
+        # Check if the input contains a dot (.)
+        match = re.search(r"\.", arg)
+        if match is not None:
+            # Split the input into two parts based on the dot:
+            #example [  ex: User         ,    ex: all           ]
+            argl = [arg[:match.span()[0]], arg[match.span()[1]:]]
+            # Check if the second part contains parentheses (indicating
+            # a method call)
+            match = re.search(r"\((.*?)\)", argl[1])
+            if match is not None:
+                # Extract the method name and its argument
+                command = [argl[1][:match.span()[0]], match.group()[1:-1]]
+                # Check if the extracted method name is in the predefined
+                # dictionary
+                if command[0] in argdict.keys():
+                    call = "{} {}".format(argl[0], command[1])
+                    # example: self.do_all(params)
+                    return argdict[command[0]](call)
+        print("*** Unknown syntax: {}".format(arg))
+        return False
+
     def do_quit(self, arg):
         """Quit command to exit the program\n"""
         return True
