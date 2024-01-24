@@ -233,4 +233,3 @@ Requirements:
 * `styles/3-footer.css`: for the footer style
 * `styles/6-filters.css`: for the filters style
 
-
