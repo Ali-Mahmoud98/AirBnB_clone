@@ -80,7 +80,7 @@ Requirements:
 The layout must be exactly the same as `1-index.html`
 
 ## 3. Zoning done!
-**Files:** [3-index.html](3-index.html) | [3-common.css](styles/3-common.css), [3-header.css](styles/3-header.css), [3-footer.css](styles/3-footer.css)
+**Files:** [3-index.html](3-index.html) | [3-common.css](styles/3-common.css) | [3-header.css](styles/3-header.css) | [3-footer.css](styles/3-footer.css)
 
 Write an HTML page that displays a header and footer by using CSS files (same as 2-index.html)
 
@@ -116,3 +116,53 @@ Requirements:
     * `styles/3-common.css`: for the global style (i.e `body` style)
     * `styles/3-header.css`: for the header style
     * `styles/3-footer.css`: for the footer style
+
+## 4. Search!
+**Files:** [4-index.html](4-index.html) | [4-common.css](styles/4-common.css) | [4-filters.css](styles/4-filters.css) | [3-header.css](styles/3-header.css) | [3-footer.css](styles/3-footer.css)
+
+Write an HTML page that displays a header, footer and a filters box with a search button.
+
+Layout: (based on `3-index.html`)
+
+* Container:
+    * between `header` and `footer` tags, add a `div`:
+        * classname: `container`
+        * max width 1000px
+        * margin top and bottom 30px - it should be 30px under the bottom of the `header`
+        * center horizontally
+* Filter section:
+    * tag `section`
+    * classname `filters`
+    * inside the `.container`
+    * color white
+    * height: 70px
+    * width: 100% of the container
+    * border 1px #DDDDDD with radius 4px
+* Button search:
+    * tag `button`
+    * text `Search`
+    * font size: 18px
+    * inside the section filters
+    * background color #FF5A5F
+    * text color #FFFFFF
+    * height: 48px
+    * width: 20% of the section filters
+    * no borders
+    * border radius: 4px
+    * center vertically and at 30px of the right border
+    * change opacity to 90% when the mouse is on the button
+
+Requirements:
+* You must use: `header`, `footer`, `section`, `button` tags
+* No inline style
+* You are not allowed to use the `img` tag
+* You are not allowed to use the `style` tag in the head tag
+* All images must be stored in the `images` folder
+* You must have 4 CSS files:
+    * `styles/4-common.css`: for the global style (`body` and `.container` styles)
+    * `styles/3-header.css`: for the header style
+    * `styles/3-footer.css`: for the footer style
+    * `styles/4-filters.css`: for the filters style
+* `4-index.html` **won’t be W3C valid**, don’t worry, it’s temporary
+
+
