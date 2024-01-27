@@ -1,0 +1,58 @@
+.places .parent article .amenities{
+    margin-top: 40px;
+}
+.places .parent article .amenities h2{
+    font-size: 16px;
+    border-bottom: 1px #DDDDDD solid;
+    text-align: left;
+    padding-bottom: 5px;
+}
+.places .parent article .amenities ul{
+    list-style: none;
+    padding: 0;
+}
+.places .parent article .amenities ul li{
+    display: flex;
+}
+.places .parent article .amenities ul .pet_freindly .icon{
+    background: url(../images/icon_pets.png);
+    background-repeat: no-repeat;
+    width: 50px;
+    height: 40px;
+    background-size: 30px;
+    background-position-y: 5px;
+}
+.places .parent article .amenities ul .tv .icon{
+    background: url(../images/icon_tv.png);
+    background-repeat: no-repeat;
+    width: 50px;
+    height: 40px;
+    background-size: 30px;
+    background-position-y: 5px;
+}
+.places .parent article .amenities ul .wifi .icon{
+    background: url(../images/icon_wifi.png);
+    background-repeat: no-repeat;
+    width: 50px;
+    height: 40px;
+    background-size: 30px;
+    background-position-y: 5px;
+}
+
+.places .parent article .reviews h2{
+    font-size: 16px;
+    border-bottom: 1px #DDDDDD solid;
+    text-align: left;
+    padding-bottom: 5px;
+}
+.places .parent article .reviews ul{
+    list-style: none;
+    padding: 0;
+}
+
+.places .parent article .reviews ul li h3{
+    margin-bottom: 0;
+}
+.places .parent article .reviews ul li p{
+    margin-top: 0;
+}
